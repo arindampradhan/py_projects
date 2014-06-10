@@ -1,0 +1,18 @@
+
+
+##logger
+==============
+simple bot to capture all the key strokes in your windows chrome browser
+
+
+
+
+###Requirements
+==============
+*works in windows ,modules required are pyHook ,pywin32,can be found on http://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+INSTRUCTION
+===========
+*unzip and paste the logger folder somewhere,goto chrome properties change the Target: to the location of the launch.bat file
+
+*checkout the log.txt file

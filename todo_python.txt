@@ -1,0 +1,6 @@
+http://b.drwlrsn.com/post/44971679516/flask-todo-emberjs-pt1
+
+
+https://www.openshift.com/blogs/build-your-app-on-openshift-using-flask-sqlalchemy-and-postgresql-92
+http://rethinkdb.com/docs/examples/flask-backbone-todo/
+https://github.com/rethinkdb/rethinkdb-example-flask-backbone-todo
