@@ -21,6 +21,6 @@ from os import rename, listdir
 
 file_location = "C:\\paste_the_location_here"
 i=0
-for file_name in os.listdir("file_location"):
-	rename(file_name,str(i)
+for file_name in os.listdir(file_location):
+	rename(file_name,str(i))
 	i+=1	
