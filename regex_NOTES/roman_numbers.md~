@@ -1,0 +1,14 @@
+###Checking for Tens
+""">>> pattern = '^M?M?M?M?(CM|CD|D?C?C?C?)(XC|XL|L?X?X?X?)$'
+>>> re.search(pattern, 'MCMXL')
+
+<_sre.SRE_Match object at 0x008EEB48>
+>>> re.search(pattern, 'MCML')
+
+<_sre.SRE_Match object at 0x008EEB48>
+>>> re.search(pattern, 'MCMLX')
+
+<_sre.SRE_Match object at 0x008EEB48>
+>>> re.search(pattern, 'MCMLXXX') 
+<_sre.SRE_Match object at 0x008EEB48>
+>>> re.search(pattern, 'MCMLXXXX') """
