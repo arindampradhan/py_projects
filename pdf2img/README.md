@@ -1,5 +1,4 @@
 #Requirements
 ==========
-
-$ sudo apt-get install libmagickwand-dev
+>$ sudo apt-get install libmagickwand-dev <br/>
 $ pip install Wand
