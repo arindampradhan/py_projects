@@ -6,7 +6,7 @@ Simple program to tell the number of lines of code in a particular language in a
 
 Usage
 =====
-	lines_of_code all
+	$lines_of_code all
 	-> number of files: 1
 	-> lines of code: 2
 
@@ -14,7 +14,7 @@ Usage
 	(   file name   ,   lines of code   )
 	('./__init__.py', 2)
 
-	lines_of_code py
+	$lines_of_code py
 	-> number of files: 2
 	-> lines of code: 39
 
