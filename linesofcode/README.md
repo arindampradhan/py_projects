@@ -14,6 +14,8 @@ Usage
 	(   file name   ,   lines of code   )
 	('./__init__.py', 2)
 
+
+<p>
 	$lines_of_code py
 	-> number of files: 2
 	-> lines of code: 39
