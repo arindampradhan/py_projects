@@ -35,8 +35,8 @@ def delete(filename):
 
 def upload(filename):
 	print "Uploading {0} ...".format(filename)
-	file = open(filename,"rb")
-	ftp.storbinary('STOR {0}'.format(file.name), file)
+	with open(filename,"rb") as file:
+		ftp.storbinary('STOR {0}'.format(file.name), file)
 
 def main():
 	if len(sys.argv) <= 1:
@@ -62,4 +62,5 @@ def main():
 
 if __name__ == "__main__":
 	main()
+	ftp.close()
 	exit()
