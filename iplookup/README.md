@@ -1,4 +1,4 @@
-Lines Of Code
+Iplookup
 =============
 
 Simple program to  look up the ip and tell about it's geolocation and all.
@@ -7,8 +7,8 @@ Simple program to  look up the ip and tell about it's geolocation and all.
 Usage
 =====
 Simply run:
-	$ python iplookup.py
-	Enter your ip address: 208.80.152.201
+
+	$ iplookup 208.80.152.201
 	status : success
 	city : San Francisco
 	zip : 94105
@@ -24,8 +24,10 @@ Simply run:
 	org : Wikimedia Foundation
 	regionName : California
 	
-	$ python iplookup.py json
-	Enter your ip address: 208.80.152.201
+
+With parameters:
+
+	$ iplookup -json 208.80.152.201
 	{
 	    "status": "success", 
 	    "city": "San Francisco", 
@@ -42,3 +44,24 @@ Simply run:
 	    "org": "Wikimedia Foundation", 
 	    "regionName": "California"
 	}
+
+To check status:
+
+	$ iplookup -s 208.80.152.201
+	$ iplookup <parameter> <ip>
+	    <parameters>
+	    -status , -s
+	    -city  , -c
+	    -zip , -z
+	    -countryCode , -cc
+	    -country , -c
+	    -region , -r
+	    -isp , -i
+	    -lon , -l
+	    -timezone , -t
+	    -as , -a
+	    -query , -q
+	    -lat , -l
+	    -org ,-o
+	    -regionName , -rn
+
