@@ -2,6 +2,7 @@
 # ============
 # pip install beautifulsoup4
 # pip install mechanize
+# $ python url_shortner.py 
 
 URL = raw_input("Give me your link -> ") #url of the site
 print
