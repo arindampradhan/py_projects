@@ -41,4 +41,4 @@ Simply run:
 	    "lat": 37.7898, 
 	    "org": "Wikimedia Foundation", 
 	    "regionName": "California"
-}
+	}
