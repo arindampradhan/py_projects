@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: normal 25px Arial, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html {
+	height: 100%;
+	background: url(http://static.panoramio.com/photos/large/59679372.jpg);
+	background-size: cover;
+}
+
+
+#calculator {
+	width: 325px;
+	height: auto;
+	overflow:hidden;
+	margin: 100px auto;
+	padding: 20px 20px 9px;
+	position:relative;
+	background: rgba(0,0,0,0.3);
+	border-radius: 3px;
+	box-shadow:  0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.top span.clear {
+	position:absolute;
+  z-index:6;
+ 
+}
+
+
+.top .screen {
+	height: 80px;
+	width: 100%;
+	position:absolute;
+	top:0; left:0;
+	padding: 20px 10px;
+	background: rgba(0, 0, 0, 0.2);
+	font-size: 27px;
+	font-weight:normal;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+.keys, .top {overflow: hidden;}
+
+
+.keys span, .top span.clear {
+	float: left;
+	position: relative;
+	top: 0;
+	
+	cursor: pointer;
+	
+	width: 66px;
+	height: 56px;
+	
+	background: rgba(0,0,0,0.55);
+	border-radius: 3px;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.1);
+	
+	margin: 0 7px 11px 0;
+	
+	color: #ccc;
+	line-height: 56px;
+	text-align: center;
+	
+	user-select: none;
+	
+
+	transition: all 0.15s ease;
+}
+
+
+.keys span.operator {
+	background: rgba(250,100,0,0.65);
+	margin-right: 0;
+}
+
+.keys span.eval {
+
+	color: #888e5f;
+}
+
+.top span.clear {
+      position: relative;
+      display: inline-block;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      color: #fff;
+      overflow: hidden;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	transition: all 0.15s ease;
+}
+
+
+.keys span:hover {
+	background: rgba(255,255,255,0.8);
+	color: #333;
+}
+
+.keys span.eval:hover {
+	background: #abb850;
+	color: #ffffff;
+}
+
+.top span.clear:hover {
+  border-radius:190px;
+	background: rgba(0,0,0,0.1);
+	color: white;
+}
+
+.keys span:active {
+	box-shadow: 0px 0px rgba(0, 0, 0, 0.2);
+	top: 4px;
+}
+
+.keys span.eval:active {
+	box-shadow: 0px 0px #717a33;
+	top: 4px;
+}
+
+.top span.clear:active {
+	top: 4px;
+	box-shadow: 0px 0px #d3545d;
+}
