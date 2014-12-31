@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TODO</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/ripples.min.css" rel="stylesheet">
+        <link href="/static/css/material-wfont.min.css" rel="stylesheet">
+        <link href="//fezvrasta.github.io/snackbarjs//static/snackbar.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       </head>
+<style type="text/css">
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 155px; /* .push must be the same height as .footer */
+}
+.icon-preview {
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	background: #D5D5D5;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.icon-preview span {
+	display: none;
+	position: absolute;
+	background: black;
+	color: #EEE;
+	padding: 5px 8px;
+	font-size: 15px;
+	font-family: Roboto;
+	border-radius: 2px;
+	z-index: 10;
+}
+.icon-preview:hover i { color: #4285f4; }
+.icon-preview:hover span { display: block; cursor: text; }
+	
+</style>
+
+<!-- navbar -->
+<body>
+<div class="navbar navbar-warning">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/index"><i class="mdi-action-event"></i> Your TODO</a>
+
+    </div>
+    <div class="navbar-collapse collapse navbar-warning-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/new"><i class="mdi-action-input"></i> New</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+            <input type="text" class="form-control col-lg-8" placeholder="Search">
+        </form>
+        </ul>
+    </div>
+</div>
+
+<!-- global  -->
+
+{%- for category, message in get_flashed_messages(with_categories=true) %}
+  <p class="flask {{ category }}-flash">{{
+    "Error: " if category == 'error' }}{{ message }}</p>
+{%- endfor %}
+
+<!-- content -->
+<div class="row wrapper">
+    <div class="col-sm-3 col-xs-12" id="lefttoc"></div>
+    <div class="col-sm-6 col-xs-12" id="maptoc">
+        <div class="panel panel-warning">
+            {% block body %}
+
+            {% endblock %}
+            </div>
+        </div>        
+    </div>
+    <div class="col-sm-3 col-xs-12" id="righttoc"></div>
+</div>
+
+<!-- footer -->
+
+<footer class="footer" style="padding-top: 60px;">
+    <div class="panel-footer text-center">
+<p>This website uses material-twitter-boostrap as front end service and flask as the backend service.<br/>Copyright (c) 2014 - -Arindam Pradhan</p>
+  </footer>	   
+</div>
+</div>
+
+
+
+
+<!-- script -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script>
+            (function(){
+
+                var $button = $("<div id='source-button' class='btn btn-primary btn-xs'>&lt; &gt;</div>").click(function(){
+                    var index =  $('.bs-component').index( $(this).parent() );
+                    $.get(window.location.href, function(data){
+                        var html = $(data).find('.bs-component').eq(index).html();
+                        html = cleanSource(html);
+                        $("#source-modal pre").text(html);
+                        $("#source-modal").modal();
+                    })
+
+                });
+
+                $('.bs-component [data-toggle="popover"]').popover();
+                $('.bs-component [data-toggle="tooltip"]').tooltip();
+
+                $(".bs-component").hover(function(){
+                    $(this).append($button);
+                    $button.show();
+                }, function(){
+                    $button.hide();
+                });
+
+                function cleanSource(html) {
+                    var lines = html.split(/\n/);
+
+                    lines.shift();
+                    lines.splice(-1, 1);
+
+                    var indentSize = lines[0].length - lines[0].trim().length,
+                        re = new RegExp(" {" + indentSize + "}");
+
+                    lines = lines.map(function(line){
+                        if (line.match(re)) {
+                            line = line.substring(indentSize);
+                        }
+
+                        return line;
+                    });
+
+                    lines = lines.join("\n");
+
+                    return lines;
+                }
+
+                $(".icons-material .icon").each(function() {
+                    $(this).after("<br><br><code>" + $(this).attr("class").replace("icon ", "") + "</code>");
+                });
+
+            })();
+
+        </script>
+        <script src="/static/js/ripples.min.js"></script>
+        <script src="/static/js/material.min.js"></script>
+        <script src="//fezvrasta.github.io/snackbarjs//static/snackbar.min.js"></script>
+
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+        <script>
+            $(function() {
+                $.material.init();
+                $(".shor").noUiSlider({
+                    start: 40,
+                    connect: "lower",
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+
+                $(".svert").noUiSlider({
+                    orientation: "vertical",
+                    start: 40,
+                    connect: "lower",
+                    range: {
+                        min: 0,
+                        max: 100
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

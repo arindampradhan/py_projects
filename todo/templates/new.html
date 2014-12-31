@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="panel-heading">
+        <h3 class="panel-title" style="width:70%"><h3><span></span><i class="mdi-content-add-circle-outline"> Add A NEW TODO ;)</i></h3></h3>
+</div>
+<div class="panel-body">
+<form class="form-horizontal" method=post action="">
+    <fieldset>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label"><span>Title  <i class="mdi-editor-border-color"></i></span></label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Please give title to todo item" value="{{request.form.title}}" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label"><span>Textarea<i class="mdi-content-create"></i></span></label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="5" id="textArea" required placeholder="Describe the todo item">{{request.form.text}}</textarea>
+                <span class="help-block"></span>
+            </div>
+        </div>
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary"><span>Submit <i class="mdi-hardware-mouse"></i></span></button>
+                <span><a href="{{ url_for('index') }}" class="btn btn-default"><span>Back to list <i class="mdi-hardware-keyboard-backspace"></i></span></a></span>
+            </div>
+    </fieldset>
+</form>        
+</div>
+
+{% endblock %}
+mdi-image-edit
