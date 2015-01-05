@@ -4,17 +4,17 @@ WEATHER
 Instant Weather updates from command line.
 
 
-`Features`
+Features
 ============
 
 * Takes city name ,public ip address or even the zip code.
 * Returns a nice statistics for the weather.
 * Even gives back the json data too.
 
-##`Usage`
+Usage
 =========
 
-### `City`
+#### `City`
 
 	$ weather california
 
@@ -31,7 +31,7 @@ Instant Weather updates from command line.
 		min_temp    : 272.514
 
 
-### `zip-code`
+#### `zip-code`
 
 	$ weather 75121 
 
@@ -47,9 +47,9 @@ Instant Weather updates from command line.
 		max_temp    : 307.264
 		min_temp    : 307.264
 
-`More Features`
+More Features
 =================
-### `ip` with `json`
+#### `ip` with `json`
 
 	$ weather --json 8.8.8.8
 	{u'base': u'cmc stations',
