@@ -4,7 +4,7 @@ WEATHER
 Instant Weather updates from command line.
 
 
-##`Features`
+`Features`
 ============
 
 * Takes city name ,public ip address or even the zip code.
@@ -47,8 +47,8 @@ Instant Weather updates from command line.
 		max_temp    : 307.264
 		min_temp    : 307.264
 
-## `More Features`
-
+`More Features`
+=================
 ### `ip` with `json`
 
 	$ weather --json 8.8.8.8
