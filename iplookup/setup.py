@@ -27,13 +27,13 @@ setup(
     maintainer_email=iplookup.__maintainer_email__,
     url=iplookup.__url__,
     license='MIT',
-    packages=['iplookup'],
+    packages=['iplookup','docopt'],
     entry_points={
         'console_scripts': [
             'iplookup = iplookup.iplookup:main',
         ]
     },
-    install_requires=[],
+    install_requires=['requests'],
 )
 
 
