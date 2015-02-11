@@ -1,0 +1,10 @@
+{% if matches %}
+<ol>
+{% for match in matches %}
+    <li>{{match}}</li>
+    <hr>
+{% endfor %}
+{% else %}
+    <h3>No matches found</h3>
+</ol>
+{% endif %}

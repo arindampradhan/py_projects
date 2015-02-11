@@ -1,0 +1,12 @@
+<form  method="POST" class="vertical">
+    {% csrf_token %}
+    <h3>## Enter your texts: </h1>
+    {{form.string}}
+    <br>
+    <h3>## Enter your regex: </h3>
+    {{form.pattern}}
+    <br>
+    <input type="submit">
+</form>
+<hr>
+
