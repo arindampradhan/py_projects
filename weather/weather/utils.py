@@ -1,6 +1,10 @@
 import socket
 import re
 
+
+APP_ID = "72f2777034ffb0674569997e8b56c972"
+
+
 def num_there(s):
 	s = str(s)
 	if any(i.isdigit() for i in s):
